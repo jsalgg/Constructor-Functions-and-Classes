@@ -1,4 +1,3 @@
-
 /***********************************************************************
 
 Let's create a constructor function to represent SMS text messages!
@@ -40,8 +39,20 @@ console.log(message2);
 // }
 
 ***********************************************************************/
-
-
+/*
+class SMS {
+  constructor(recipient, sender, text) {
+    this.recipient = recipient;
+    this.sender = sender;
+    this.text = text;
+  }
+}
+*/
+function SMS(recipient, sender, text) {
+  this.recipient = recipient;
+  this.sender = sender;
+  this.text = text;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
