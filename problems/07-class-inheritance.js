@@ -1,4 +1,3 @@
-
 /***********************************************************************
 
 Let's create a class hierarchy by updating an ES2015 class to inherit from
@@ -59,13 +58,52 @@ class Message {
   }
 }
 
-class Email {}
+class Email extends Message {
+  constructor(recipient, sender, text, subject) {
+    super(recipient, sender, text);
+    this.subject = subject;
+  }
+}
+
+const message1 = new Email(
+  "sally@smith.com",
+  "john@smith.com",
+  "Test Message One",
+  "This is a test message."
+);
+console.log(message1);
+
+// Should print...
+
+// Email {
+//   recipient: 'sally@smith.com',
+//   sender: 'john@smith.com',
+//   text: 'This is a test message.',
+//   subject: 'Test Message One'
+// }
+
+const message2 = new Email(
+  "sally@smith.com",
+  "john@smith.com",
+  "Test Message Two",
+  "This is a test message."
+);
+console.log(message2);
+
+// Should print...
+
+// Email {
+//   recipient: 'sally@smith.com',
+//   sender: 'john@smith.com',
+//   text: 'This is a test message.',
+//   subject: 'Test Message Two'
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = {
     Message,
-    Email
+    Email,
   };
 } catch {
   module.exports = null;
